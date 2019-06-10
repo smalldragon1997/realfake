@@ -1,0 +1,1 @@
+export const reFetchTimeOut = 1000;
