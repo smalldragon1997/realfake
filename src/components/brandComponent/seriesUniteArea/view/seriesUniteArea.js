@@ -60,9 +60,10 @@ class seriesUniteArea extends React.Component {
                                             {
                                                 commList
                                                     .filter((item1,index)=>(
-                                                        index<5&&item1.uniteId.reduce((result,next)=>(result?result:next==item.uniteId),false)
+                                                        item1.uniteId.reduce((result,next)=>(result?result:next==item.uniteId),false)
                                                     ))
-                                                    .map(function (i) {
+                                                    .map(function (i,index) {
+                                                        if(index<5)
                                                     return (
                                                         <Link to={"/commodities/" + i.commId}>
                                                             <Card

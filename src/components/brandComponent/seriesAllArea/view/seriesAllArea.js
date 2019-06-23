@@ -35,6 +35,7 @@ class seriesAllArea extends React.Component {
             brandInfo
         } = this.props;
 
+        console.log(commList)
         const bodyStyle = {};
         const headStyle = {textAlign: "center"};
         return (
@@ -70,9 +71,10 @@ class seriesAllArea extends React.Component {
                                                 {
                                                     commList===undefined?undefined:commList
                                                         .filter((item1,index)=>(
-                                                            index<5&&item1.seriesId===item.seriesId
+                                                            item1.seriesId===item.seriesId
                                                         ))
                                                         .map(function (i,index) {
+                                                            if(index<5)
                                                         return (
                                                             <Link to={"/commodities/" + i.commId}>
                                                                 <Card
